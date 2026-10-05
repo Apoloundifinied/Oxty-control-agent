@@ -41,6 +41,14 @@
         "typescript": "^5.8.0",
       },
     },
+    "packages/policy": {
+      "name": "@ia-control/policy",
+      "version": "0.1.0",
+      "dependencies": {
+        "@ia-control/shared": "workspace:*",
+        "zod": "^3.24.0",
+      },
+    },
     "packages/shared": {
       "name": "@ia-control/shared",
       "version": "0.1.0",
@@ -148,6 +156,8 @@
     "@emnapi/wasi-threads": ["@emnapi/wasi-threads@1.2.3", "", { "dependencies": { "tslib": "^2.4.0" } }, "sha512-ELEBe8PsLvvJ6QMr0zLt8ffvOHW/dc1m3CEzNMg7aJUv3bMaoDtw2TXyDAwkYBuroxxuHEwhRTLJSe5sya547g=="],
 
     "@ia-control/api": ["@ia-control/api@workspace:apps/api"],
+
+    "@ia-control/policy": ["@ia-control/policy@workspace:packages/policy"],
 
     "@ia-control/shared": ["@ia-control/shared@workspace:packages/shared"],
 
