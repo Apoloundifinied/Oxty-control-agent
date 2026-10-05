@@ -1,0 +1,21 @@
+{
+  "name": "@ia-control/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "rsbuild dev --port 5173",
+    "build": "rsbuild build",
+    "preview": "rsbuild preview"
+  },
+  "dependencies": {
+    "@tanstack/solid-query": "^5.66.0",
+    "@tanstack/solid-router": "^1.114.0",
+    "solid-js": "^1.9.5"
+  },
+  "devDependencies": {
+    "@rsbuild/core": "^1.2.0",
+    "@rsbuild/plugin-solid": "^1.1.0",
+    "typescript": "^5.8.0"
+  }
+}

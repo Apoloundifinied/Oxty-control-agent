@@ -1,0 +1,28 @@
+{
+  "name": "ia-control",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "dev": "concurrently -n api,web -c cyan,magenta \"bun run --cwd apps/api dev\" \"bun run --cwd apps/web dev\"",
+    "dev:api": "bun run --cwd apps/api dev",
+    "dev:web": "bun run --cwd apps/web dev",
+    "test": "bun test",
+    "typecheck": "bunx tsc -b --noEmit",
+    "lint": "bunx @biomejs/biome check .",
+    "db:up": "docker compose -f infra/docker-compose.yml up -d",
+    "db:down": "docker compose -f infra/docker-compose.yml down",
+    "db:migrate": "bun x prisma migrate dev",
+    "db:generate": "bun x prisma generate",
+    "db:studio": "bun x prisma studio"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.0",
+    "@prisma/client": "6.19.3",
+    "concurrently": "^9.1.2",
+    "prisma": "6.19.3",
+    "typescript": "^5.8.0"
+  },
+  "trustedDependencies": ["prisma", "@prisma/client", "@prisma/engines", "esbuild"],
+  "engines": { "bun": ">=1.2.0" }
+}
