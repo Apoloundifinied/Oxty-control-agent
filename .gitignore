@@ -3,6 +3,8 @@ dist/
 .env
 .env.local
 *.log
+infra/pgsql.zip
+infra/postgres/
 .DS_Store
 prisma/migrations/dev.db*
 generated/

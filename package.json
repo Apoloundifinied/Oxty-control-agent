@@ -10,8 +10,9 @@
     "test": "bun test",
     "typecheck": "bunx tsc -b --noEmit",
     "lint": "bunx @biomejs/biome check .",
-    "db:up": "docker compose -f infra/docker-compose.yml up -d",
-    "db:down": "docker compose -f infra/docker-compose.yml down",
+    "db:up": "powershell -ExecutionPolicy Bypass -File infra/db-up-portable.ps1",
+    "db:up:docker": "docker compose -f infra/docker-compose.yml up -d",
+    "db:down": "powershell -ExecutionPolicy Bypass -Command \"& infra\\postgres\\pgsql\\bin\\pg_ctl.exe stop -D infra\\postgres\\data -m fast\"",
     "db:migrate": "bun x prisma migrate dev",
     "db:generate": "bun x prisma generate",
     "db:studio": "bun x prisma studio"
