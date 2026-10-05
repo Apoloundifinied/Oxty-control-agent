@@ -18,6 +18,7 @@
       "dependencies": {
         "@elysiajs/cors": "^1.2.0",
         "@elysiajs/jwt": "^1.2.0",
+        "@ia-control/policy": "workspace:*",
         "@ia-control/shared": "workspace:*",
         "@prisma/client": "6.19.3",
         "elysia": "^1.2.0",
@@ -43,6 +44,14 @@
     },
     "packages/policy": {
       "name": "@ia-control/policy",
+      "version": "0.1.0",
+      "dependencies": {
+        "@ia-control/shared": "workspace:*",
+        "zod": "^3.24.0",
+      },
+    },
+    "packages/sdk": {
+      "name": "@ia-control/sdk",
       "version": "0.1.0",
       "dependencies": {
         "@ia-control/shared": "workspace:*",
@@ -158,6 +167,8 @@
     "@ia-control/api": ["@ia-control/api@workspace:apps/api"],
 
     "@ia-control/policy": ["@ia-control/policy@workspace:packages/policy"],
+
+    "@ia-control/sdk": ["@ia-control/sdk@workspace:packages/sdk"],
 
     "@ia-control/shared": ["@ia-control/shared@workspace:packages/shared"],
 

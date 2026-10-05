@@ -121,6 +121,7 @@ model Agent {
   updatedAt        DateTime    @updatedAt
 
   versions AgentVersion[]
+  grants   CapabilityGrant[]
 
   @@unique([workspaceId, slug])
 }
@@ -159,6 +160,8 @@ model CapabilityGrant {
   enabled          Boolean
   maxAmountCents   Int?
   rateLimitPerHour Int?
+
+  agent Agent @relation(fields: [agentId], references: [id], onDelete: Cascade)
 
   @@unique([agentId, capability])
 }

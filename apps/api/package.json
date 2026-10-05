@@ -10,6 +10,7 @@
   "dependencies": {
     "@elysiajs/cors": "^1.2.0",
     "@elysiajs/jwt": "^1.2.0",
+    "@ia-control/policy": "workspace:*",
     "@ia-control/shared": "workspace:*",
     "@prisma/client": "6.19.3",
     "elysia": "^1.2.0",

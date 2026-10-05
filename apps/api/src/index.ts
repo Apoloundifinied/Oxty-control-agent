@@ -2,6 +2,10 @@ import { Elysia, t } from "elysia";
 import { cors } from "@elysiajs/cors";
 import { jwt } from "@elysiajs/jwt";
 import { prisma } from "./db";
+import { actionRoutes } from "./routes/actions";
+import { agentRoutes } from "./routes/agents";
+import { approvalRoutes } from "./routes/approvals";
+import { streamRoutes } from "./routes/stream";
 
 const JWT_SECRET = process.env.JWT_SECRET ?? "dev-secret-trocar-em-producao";
 
@@ -80,7 +84,8 @@ const app = new Elysia({ prefix: "/v1" })
     },
     (app) =>
       app
-        .derive(({ headers }) => ({ auth: headers as Record<string, string | undefined> }))
+        .use(agentRoutes)
+        .use(approvalRoutes)
         .get("/me", async ({ jwt, headers, set }) => {
           const token = headers.authorization!.slice(7);
           const payload = await jwt.verify(token);
@@ -123,7 +128,10 @@ const app = new Elysia({ prefix: "/v1" })
           },
         ),
   )
-  .get("/", () => ({ name: "ia-control-api", version: "0.1.0" }));
+  .get("/", () => ({ name: "ia-control-api", version: "0.1.0" }))
+  // rotas de agente (chave de API) — autenticação própria dentro do módulo
+  .use(actionRoutes)
+  .use(streamRoutes);
 
 export type App = typeof app;
 
