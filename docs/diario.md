@@ -8,6 +8,7 @@
 - Fase 0 em andamento: monorepo, Docker Compose, Prisma, auth básica, `packages/shared` com 5 testes OK.
 - **Bloqueio resolvido:** sem acesso admin para Docker/WSL2, adotamos **PostgreSQL portátil local** (ADR 009); pgvector fica para a Fase 3 (alinha com a D4).
 - ✅ **Fase 0 CONCLUÍDA:** `bun test` (28 testes) e `bun run dev` funcionam; migrações aplicadas; **usuário e workspace criados por API** (aceite validado).
+- **D9 decidida antecipada:** o produto chama **Oxty** (marca real; logos chegam em breve para integrar). Design deve já tratar como marca própria (identidade, animações com motion signature própria).
 
 ## 2026-XX-XX — Antecipando o coração da Fase 1
 - Escrito `packages/policy` (PURO): motor de decisão completo da seção 6 — ordem de avaliação 6.2, regras declarativas 6.3, risco 6.4, autonomia 6.5 efetiva.

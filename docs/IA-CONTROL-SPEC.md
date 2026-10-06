@@ -1067,6 +1067,8 @@ FASE ATUAL: <Fase 0 | Fase 1 | ...>
 | 006 | Saúde cognitiva por sinais observáveis + modo sombra | Honestidade metodológica; calibração antes de agir |
 | 007 | Auditoria com hash encadeado | Provar integridade para auditor e cliente |
 | 008 | Contexto (humano) separado de Memória (aprendida) | Governança e defesa contra envenenamento |
+| 009 | pgvector adiado para a Fase 3 (junto com D4); dev local usa Postgres portátil | Máquina sem Docker/admin; pgvector sem binários Windows prontos; pgvector só é necessário na Fase 3 |
+| 010 | Marca definitiva: **Oxty** (adianta D9); design já trata como identidade própria, com placeholder de logo até os arquivos chegarem | Nome comercial real definido e logos a caminho |
 
 ---
 
