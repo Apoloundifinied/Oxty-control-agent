@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "@rsbuild/core": "^1.2.0",
+    "@rsbuild/plugin-babel": "^1.2.0",
     "@rsbuild/plugin-solid": "^1.1.0",
     "typescript": "^5.8.0"
   }
